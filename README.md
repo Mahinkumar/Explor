@@ -1,4 +1,4 @@
-# Explor by Mahinkumar from India ,
+# Explor-Rover by Mahinkumar from India ,
 
 This repository currently doesnt contain any code
 but still its active
