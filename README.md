@@ -1,7 +1,7 @@
 # Explor-Rover by Mahinkumar from India ,
 
-This repository currently doesnt contain any code
-but still its active
+This repository currently doesnt contain source code,
+This repository is Made for Research and development purpose of the code 
 
 # Copyright info
  - The name *EXPLOR* is patented in the name of the Author
