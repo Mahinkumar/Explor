@@ -1,7 +1,7 @@
-
+/* Created by Mahinkumar 
+   For more info - https://github.com/Mahinkumar/Explor
+   This code is licensed and usage without proper permissions is punishable */
 #include <Servo.h>
-#include "pitches.h"
-#define SPEAKER 4
 #include <Drive.h>
 
 Servo headservo;
@@ -35,31 +35,12 @@ Drive drive(IN1, IN2, IN3, IN4);
 
 void setup() {
 
-  tone(SPEAKER, NOTE_C7, 100);
-  delay(500);
-  tone(SPEAKER, NOTE_C6, 100);
-  tone(SPEAKER, NOTE_C7, 100);
-  delay(500);
-  tone(SPEAKER, NOTE_C6, 100);
-  tone(SPEAKER, NOTE_C7, 100);
-  delay(500);
-  tone(SPEAKER, NOTE_C6, 100);
 
 
   Serial.begin(9600); // Enables Serial monitor for debugging purposes
-  Serial.println("Exploration Rover Initialized");
+  Serial.println("Rover Initialized");
   Serial.print("O/S Starting .");
   delay(1000);
-  Serial.print(" .");
-  delay(1000);
-  Serial.print(" .");
-  delay(1000);
-  Serial.println(" .");
-  Serial.println("System Check Results : OK ");
-  delay(1000);
-  Serial.println("Data Link Initialized... "); // Test the Serial communication
-  Serial.println("Awaiting Commands from mission control");
-  Serial.println("----------------------------------------------------------------");
   pinMode(EchoPin, INPUT);//signal input port
   for (int pinindex = 3; pinindex < 10; pinindex++) {
     pinMode(pinindex, OUTPUT); // set pins 3 to 10 as outputs
@@ -89,25 +70,21 @@ void loop()
         break;
       case 'B' :
         back1();
-        //buzz();
         break;
       case 'L' :
         lturn();
-        //buzz();
         break;
       case 'v' :
         radar();
         break;
       case 'R' :
         rturn();
-        // buzz();
         break;
       case 'S' :
         totalhalt();
         break;
       case 'W' :
         toggleRoam();
-        buzz();
         break;
     }
   }
@@ -179,20 +156,13 @@ void moveForward1() {
 }
 void back1() {
   drive.moveBackward(500);
-  /* analogWrite(leftmotorpin1, 120);
-    analogWrite(leftmotorpin2, 0);
-    analogWrite(rightmotorpin1, 120);
-    analogWrite(rightmotorpin2, 0); */
+
 }
 
 void lturn() {
   for (int i = 0; i <= (dur * 5); i++) {
     drive.turnLeft(500);
-    /* analogWrite(leftmotorpin1, 0);
-      analogWrite(leftmotorpin2, 190);
-      analogWrite(rightmotorpin1, 190);
-      analogWrite(rightmotorpin2, 0);
-      //Serial.println("Turning Left");*/
+ 
   }
 }
 
@@ -200,11 +170,7 @@ void lturn() {
 void rturn() {
   for (int i = 0; i <= (dur * 5); i++) {
     drive.turnRight(500);
-    /*analogWrite(leftmotorpin1, 190);
-      analogWrite(leftmotorpin2, 0);
-      analogWrite(rightmotorpin1, 0);
-      analogWrite(rightmotorpin2, 190);
-      //Serial.println("Turning Right");*/
+   
   }
 }
 // serial control only
@@ -222,10 +188,6 @@ void toggleRoam() {
 }
 
 void nodanger() {
-  /*analogWrite(leftmotorpin1, 0);
-    analogWrite(leftmotorpin2, 120);
-    analogWrite(rightmotorpin1, 0);
-    analogWrite(rightmotorpin2, 120);*/
   if (add1 > 38 ) whichway();
 
   return;
@@ -234,12 +196,8 @@ void nodanger() {
 //backward
 void backup() {
   add1 = 0; // resets the counter for the nodanger loops
-  /*digitalWrite(leftmotorpin1, HIGH);
-    digitalWrite(leftmotorpin2, LOW);
-    digitalWrite(rightmotorpin1, HIGH);
-    digitalWrite(rightmotorpin2, LOW);*/
+  
   Serial.println("Backing Up");
-  fart();
 }
 
 void whichway()
@@ -257,14 +215,13 @@ void whichway()
   Serial.println(rDist);
   if (lDist < rDist) {
     Serial.println("Decided Right Is Best");
-    buzz();// Make him talk
+
     body_rturn();
     totalhalt();
     currDist = MeasuringDistance();
     if (currDist < 45) body_rturn();
     else {
       Serial.println("Decided Left Is Best");
-      buzz();// Make him talk
       body_lturn();
       totalhalt();
       currDist = MeasuringDistance();
@@ -288,12 +245,7 @@ float MeasuringDistance() {
 void body_lturn() {
   for (int i = 0; i <= (dur * 5); i++) {
     drive.turnLeft(500);
-    /*analogWrite(leftmotorpin1, 0);
-        analogWrite(leftmotorpin2, 220);
-        analogWrite(rightmotorpin1, 220);
-        analogWrite(rightmotorpin2, 0);
-        Serial.println("Turning Left");
-        delay(400);*/
+
   }
 }
 
@@ -301,28 +253,12 @@ void body_lturn() {
 void body_rturn() {
   for (int i = 0; i <= (dur * 5); i++) {
     drive.turnRight(500);
-    /*analogWrite(leftmotorpin1, 220);
-      analogWrite(leftmotorpin2, 0);
-      analogWrite(rightmotorpin1, 0);
-      analogWrite(rightmotorpin2, 220);
-      Serial.println("Turning Right");
-      delay(400);*/
+
   }
 }
 
-void buzz() {
-  tone(SPEAKER, NOTE_C7, 100);
-  delay(50);
-  tone(SPEAKER, NOTE_C6, 100);
-}
 
-void fart() {
-  tone(SPEAKER, NOTE_C2, 200);
-  delay(50);
-  tone(SPEAKER, NOTE_C1, 400);
-  delay(100);
-  noTone(SPEAKER);
-}
+
 
 void radar() {
   Serial.println("SONAR Sweep Command Received");
@@ -356,21 +292,11 @@ void Print (int R , int T)
   delay(100);
 }
 
-/*digitalWrite(leftmotorpin1, HIGH);
-  digitalWrite(leftmotorpin2, HIGH);
-  digitalWrite(rightmotorpin1, HIGH);
-  digitalWrite(rightmotorpin2, HIGH);
-  //Serial.println("Totalhalt!");
-  //headservo.write(90); // set servo to face forward
-  //delay(250);
-  return;*/
+
 
 void totalhalt() {  // This applies the brakes so rover cannot move
   drive.moveForward(100);
   drive.moveBackward(100);
   delay(50);
-  //Serial.println("Totalhalt!");
-  //headservo.write(90); // set servo to face forward
-  //delay(250);
   return;
 }
