@@ -35,8 +35,6 @@ Drive drive(IN1, IN2, IN3, IN4);
 
 void setup() {
 
-
-
   Serial.begin(9600); // Enables Serial monitor for debugging purposes
   Serial.println("Rover Initialized");
   Serial.print("O/S Starting .");
@@ -256,9 +254,6 @@ void body_rturn() {
 
   }
 }
-
-
-
 
 void radar() {
   Serial.println("SONAR Sweep Command Received");
