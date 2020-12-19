@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## Explor - The rover
 
-You can use the [editor on GitHub](https://github.com/Mahinkumar/Explor/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Explor - The rover is built based on python platform and a java machine control
+The project is licensed under *GNU v3.0 license* and the name *EXPLOR* is patented under *CC-BY*
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## About the Author and builder
 
-### Markdown
+Mahinkumar is an part time coder , cinematographer and student from *INDIA* 
+This project planned to take about 3 months based on infinite testing and R&D environment 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Notes
 
-```markdown
-Syntax highlighted code block
+The code will be made availible open source on february 18th based on the demand 
+To get pre-acess to the code contact the author - github.com/mahinkumar
 
-# Header 1
-## Header 2
-### Header 3
+Still the *base code* is availible opensourced at - github.com/mahinkumar/explor 
+it has limited features and some basic codes and loops of the project
 
-- Bulleted
-- List
+be sure not to use them for commercial or publish it without the permission of the author
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Mahinkumar/Explor/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+------------------------------------------------------------------------------------------
