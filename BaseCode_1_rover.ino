@@ -1,6 +1,6 @@
 /* Created by Mahinkumar 
    For more info - https://github.com/Mahinkumar/Explor
-   This code is licensed and usage without proper permissions is punishable */
+   This code is licensed  */
 #include <Servo.h>
 #include <Drive.h>
 
